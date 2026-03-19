@@ -1,286 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Organizador Semanal</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <title>Mi Semana</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="app-container">
-    <!-- Header principal -->
-    <header class="app-header">
-      <h1>Mi Organizador Semanal</h1>
-      <p>Planificá tus actividades por día y horario</p>
-    </header>
 
-    <!-- Controles superiores -->
-    <section class="top-controls">
-      <div class="week-navigation">
-        <button id="prevWeekBtn" type="button">← Semana anterior</button>
-        <h2 id="currentWeekLabel">Semana actual</h2>
-        <button id="nextWeekBtn" type="button">Semana siguiente →</button>
-      </div>
+<h1>Mi Semana</h1>
 
-      <div class="main-actions">
-        <button id="openTaskModalBtn" type="button">+ Agregar actividad</button>
-      </div>
-    </section>
+<div class="planner">
 
-    <!-- Contenedor principal -->
-    <main class="planner-section">
-      <!-- Encabezado de la grilla -->
-      <div class="planner-grid" id="plannerGrid">
-        <!-- Esquina superior izquierda -->
-        <div class="grid-header hour-column-header">Horario</div>
+  <div class="cell header">Hora</div>
+  <div class="cell header">Lunes</div>
+  <div class="cell header">Martes</div>
+  <div class="cell header">Miércoles</div>
+  <div class="cell header">Jueves</div>
+  <div class="cell header">Viernes</div>
+  <div class="cell header">Sábado</div>
+  <div class="cell header">Domingo</div>
 
-        <!-- Días de la semana -->
-        <div class="grid-header">Lunes</div>
-        <div class="grid-header">Martes</div>
-        <div class="grid-header">Miércoles</div>
-        <div class="grid-header">Jueves</div>
-        <div class="grid-header">Viernes</div>
-        <div class="grid-header">Sábado</div>
-        <div class="grid-header">Domingo</div>
+  <!-- FILA 08 -->
+  <div class="cell time">08:00</div>
+  <div class="cell slot" data-day="Lunes" data-hour="08:00"></div>
+  <div class="cell slot" data-day="Martes" data-hour="08:00"></div>
+  <div class="cell slot" data-day="Miércoles" data-hour="08:00"></div>
+  <div class="cell slot" data-day="Jueves" data-hour="08:00"></div>
+  <div class="cell slot" data-day="Viernes" data-hour="08:00"></div>
+  <div class="cell slot" data-day="Sábado" data-hour="08:00"></div>
+  <div class="cell slot" data-day="Domingo" data-hour="08:00"></div>
 
-        <!-- Filas horarias -->
-        <!-- 08:00 -->
-        <div class="hour-cell">08:00</div>
-        <div class="time-slot" data-day="Lunes" data-hour="08:00"></div>
-        <div class="time-slot" data-day="Martes" data-hour="08:00"></div>
-        <div class="time-slot" data-day="Miércoles" data-hour="08:00"></div>
-        <div class="time-slot" data-day="Jueves" data-hour="08:00"></div>
-        <div class="time-slot" data-day="Viernes" data-hour="08:00"></div>
-        <div class="time-slot" data-day="Sábado" data-hour="08:00"></div>
-        <div class="time-slot" data-day="Domingo" data-hour="08:00"></div>
+  <!-- FILA 09 -->
+  <div class="cell time">09:00</div>
+  <div class="cell slot" data-day="Lunes" data-hour="09:00"></div>
+  <div class="cell slot" data-day="Martes" data-hour="09:00"></div>
+  <div class="cell slot" data-day="Miércoles" data-hour="09:00"></div>
+  <div class="cell slot" data-day="Jueves" data-hour="09:00"></div>
+  <div class="cell slot" data-day="Viernes" data-hour="09:00"></div>
+  <div class="cell slot" data-day="Sábado" data-hour="09:00"></div>
+  <div class="cell slot" data-day="Domingo" data-hour="09:00"></div>
 
-        <!-- 09:00 -->
-        <div class="hour-cell">09:00</div>
-        <div class="time-slot" data-day="Lunes" data-hour="09:00"></div>
-        <div class="time-slot" data-day="Martes" data-hour="09:00"></div>
-        <div class="time-slot" data-day="Miércoles" data-hour="09:00"></div>
-        <div class="time-slot" data-day="Jueves" data-hour="09:00"></div>
-        <div class="time-slot" data-day="Viernes" data-hour="09:00"></div>
-        <div class="time-slot" data-day="Sábado" data-hour="09:00"></div>
-        <div class="time-slot" data-day="Domingo" data-hour="09:00"></div>
+  <!-- FILA 10 -->
+  <div class="cell time">10:00</div>
+  <div class="cell slot" data-day="Lunes" data-hour="10:00"></div>
+  <div class="cell slot" data-day="Martes" data-hour="10:00"></div>
+  <div class="cell slot" data-day="Miércoles" data-hour="10:00"></div>
+  <div class="cell slot" data-day="Jueves" data-hour="10:00"></div>
+  <div class="cell slot" data-day="Viernes" data-hour="10:00"></div>
+  <div class="cell slot" data-day="Sábado" data-hour="10:00"></div>
+  <div class="cell slot" data-day="Domingo" data-hour="10:00"></div>
 
-        <!-- 10:00 -->
-        <div class="hour-cell">10:00</div>
-        <div class="time-slot" data-day="Lunes" data-hour="10:00"></div>
-        <div class="time-slot" data-day="Martes" data-hour="10:00"></div>
-        <div class="time-slot" data-day="Miércoles" data-hour="10:00"></div>
-        <div class="time-slot" data-day="Jueves" data-hour="10:00"></div>
-        <div class="time-slot" data-day="Viernes" data-hour="10:00"></div>
-        <div class="time-slot" data-day="Sábado" data-hour="10:00"></div>
-        <div class="time-slot" data-day="Domingo" data-hour="10:00"></div>
+</div>
 
-        <!-- 11:00 -->
-        <div class="hour-cell">11:00</div>
-        <div class="time-slot" data-day="Lunes" data-hour="11:00"></div>
-        <div class="time-slot" data-day="Martes" data-hour="11:00"></div>
-        <div class="time-slot" data-day="Miércoles" data-hour="11:00"></div>
-        <div class="time-slot" data-day="Jueves" data-hour="11:00"></div>
-        <div class="time-slot" data-day="Viernes" data-hour="11:00"></div>
-        <div class="time-slot" data-day="Sábado" data-hour="11:00"></div>
-        <div class="time-slot" data-day="Domingo" data-hour="11:00"></div>
+<script src="app.js"></script>
 
-        <!-- 12:00 -->
-        <div class="hour-cell">12:00</div>
-        <div class="time-slot" data-day="Lunes" data-hour="12:00"></div>
-        <div class="time-slot" data-day="Martes" data-hour="12:00"></div>
-        <div class="time-slot" data-day="Miércoles" data-hour="12:00"></div>
-        <div class="time-slot" data-day="Jueves" data-hour="12:00"></div>
-        <div class="time-slot" data-day="Viernes" data-hour="12:00"></div>
-        <div class="time-slot" data-day="Sábado" data-hour="12:00"></div>
-        <div class="time-slot" data-day="Domingo" data-hour="12:00"></div>
-
-        <!-- 13:00 -->
-        <div class="hour-cell">13:00</div>
-        <div class="time-slot" data-day="Lunes" data-hour="13:00"></div>
-        <div class="time-slot" data-day="Martes" data-hour="13:00"></div>
-        <div class="time-slot" data-day="Miércoles" data-hour="13:00"></div>
-        <div class="time-slot" data-day="Jueves" data-hour="13:00"></div>
-        <div class="time-slot" data-day="Viernes" data-hour="13:00"></div>
-        <div class="time-slot" data-day="Sábado" data-hour="13:00"></div>
-        <div class="time-slot" data-day="Domingo" data-hour="13:00"></div>
-
-        <!-- 14:00 -->
-        <div class="hour-cell">14:00</div>
-        <div class="time-slot" data-day="Lunes" data-hour="14:00"></div>
-        <div class="time-slot" data-day="Martes" data-hour="14:00"></div>
-        <div class="time-slot" data-day="Miércoles" data-hour="14:00"></div>
-        <div class="time-slot" data-day="Jueves" data-hour="14:00"></div>
-        <div class="time-slot" data-day="Viernes" data-hour="14:00"></div>
-        <div class="time-slot" data-day="Sábado" data-hour="14:00"></div>
-        <div class="time-slot" data-day="Domingo" data-hour="14:00"></div>
-
-        <!-- 15:00 -->
-        <div class="hour-cell">15:00</div>
-        <div class="time-slot" data-day="Lunes" data-hour="15:00"></div>
-        <div class="time-slot" data-day="Martes" data-hour="15:00"></div>
-        <div class="time-slot" data-day="Miércoles" data-hour="15:00"></div>
-        <div class="time-slot" data-day="Jueves" data-hour="15:00"></div>
-        <div class="time-slot" data-day="Viernes" data-hour="15:00"></div>
-        <div class="time-slot" data-day="Sábado" data-hour="15:00"></div>
-        <div class="time-slot" data-day="Domingo" data-hour="15:00"></div>
-
-        <!-- 16:00 -->
-        <div class="hour-cell">16:00</div>
-        <div class="time-slot" data-day="Lunes" data-hour="16:00"></div>
-        <div class="time-slot" data-day="Martes" data-hour="16:00"></div>
-        <div class="time-slot" data-day="Miércoles" data-hour="16:00"></div>
-        <div class="time-slot" data-day="Jueves" data-hour="16:00"></div>
-        <div class="time-slot" data-day="Viernes" data-hour="16:00"></div>
-        <div class="time-slot" data-day="Sábado" data-hour="16:00"></div>
-        <div class="time-slot" data-day="Domingo" data-hour="16:00"></div>
-
-        <!-- 17:00 -->
-        <div class="hour-cell">17:00</div>
-        <div class="time-slot" data-day="Lunes" data-hour="17:00"></div>
-        <div class="time-slot" data-day="Martes" data-hour="17:00"></div>
-        <div class="time-slot" data-day="Miércoles" data-hour="17:00"></div>
-        <div class="time-slot" data-day="Jueves" data-hour="17:00"></div>
-        <div class="time-slot" data-day="Viernes" data-hour="17:00"></div>
-        <div class="time-slot" data-day="Sábado" data-hour="17:00"></div>
-        <div class="time-slot" data-day="Domingo" data-hour="17:00"></div>
-
-        <!-- 18:00 -->
-        <div class="hour-cell">18:00</div>
-        <div class="time-slot" data-day="Lunes" data-hour="18:00"></div>
-        <div class="time-slot" data-day="Martes" data-hour="18:00"></div>
-        <div class="time-slot" data-day="Miércoles" data-hour="18:00"></div>
-        <div class="time-slot" data-day="Jueves" data-hour="18:00"></div>
-        <div class="time-slot" data-day="Viernes" data-hour="18:00"></div>
-        <div class="time-slot" data-day="Sábado" data-hour="18:00"></div>
-        <div class="time-slot" data-day="Domingo" data-hour="18:00"></div>
-
-        <!-- 19:00 -->
-        <div class="hour-cell">19:00</div>
-        <div class="time-slot" data-day="Lunes" data-hour="19:00"></div>
-        <div class="time-slot" data-day="Martes" data-hour="19:00"></div>
-        <div class="time-slot" data-day="Miércoles" data-hour="19:00"></div>
-        <div class="time-slot" data-day="Jueves" data-hour="19:00"></div>
-        <div class="time-slot" data-day="Viernes" data-hour="19:00"></div>
-        <div class="time-slot" data-day="Sábado" data-hour="19:00"></div>
-        <div class="time-slot" data-day="Domingo" data-hour="19:00"></div>
-
-        <!-- 20:00 -->
-        <div class="hour-cell">20:00</div>
-        <div class="time-slot" data-day="Lunes" data-hour="20:00"></div>
-        <div class="time-slot" data-day="Martes" data-hour="20:00"></div>
-        <div class="time-slot" data-day="Miércoles" data-hour="20:00"></div>
-        <div class="time-slot" data-day="Jueves" data-hour="20:00"></div>
-        <div class="time-slot" data-day="Viernes" data-hour="20:00"></div>
-        <div class="time-slot" data-day="Sábado" data-hour="20:00"></div>
-        <div class="time-slot" data-day="Domingo" data-hour="20:00"></div>
-
-        <!-- 21:00 -->
-        <div class="hour-cell">21:00</div>
-        <div class="time-slot" data-day="Lunes" data-hour="21:00"></div>
-        <div class="time-slot" data-day="Martes" data-hour="21:00"></div>
-        <div class="time-slot" data-day="Miércoles" data-hour="21:00"></div>
-        <div class="time-slot" data-day="Jueves" data-hour="21:00"></div>
-        <div class="time-slot" data-day="Viernes" data-hour="21:00"></div>
-        <div class="time-slot" data-day="Sábado" data-hour="21:00"></div>
-        <div class="time-slot" data-day="Domingo" data-hour="21:00"></div>
-
-        <!-- 22:00 -->
-        <div class="hour-cell">22:00</div>
-        <div class="time-slot" data-day="Lunes" data-hour="22:00"></div>
-        <div class="time-slot" data-day="Martes" data-hour="22:00"></div>
-        <div class="time-slot" data-day="Miércoles" data-hour="22:00"></div>
-        <div class="time-slot" data-day="Jueves" data-hour="22:00"></div>
-        <div class="time-slot" data-day="Viernes" data-hour="22:00"></div>
-        <div class="time-slot" data-day="Sábado" data-hour="22:00"></div>
-        <div class="time-slot" data-day="Domingo" data-hour="22:00"></div>
-      </div>
-    </main>
-  </div>
-
-  <!-- Modal para agregar / editar actividad -->
-  <div class="modal hidden" id="taskModal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 id="modalTitle">Agregar actividad</h3>
-        <button id="closeModalBtn" type="button">X</button>
-      </div>
-
-      <form id="taskForm">
-        <div class="form-group">
-          <label for="taskTitle">Actividad</label>
-          <input
-            type="text"
-            id="taskTitle"
-            name="taskTitle"
-            placeholder="Ej: Estudiar JavaScript"
-            required
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="taskDescription">Descripción</label>
-          <textarea
-            id="taskDescription"
-            name="taskDescription"
-            rows="3"
-            placeholder="Detalle opcional"
-          ></textarea>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="taskDay">Día</label>
-            <select id="taskDay" name="taskDay" required>
-              <option value="">Seleccionar</option>
-              <option value="Lunes">Lunes</option>
-              <option value="Martes">Martes</option>
-              <option value="Miércoles">Miércoles</option>
-              <option value="Jueves">Jueves</option>
-              <option value="Viernes">Viernes</option>
-              <option value="Sábado">Sábado</option>
-              <option value="Domingo">Domingo</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="taskHour">Hora</label>
-            <select id="taskHour" name="taskHour" required>
-              <option value="">Seleccionar</option>
-              <option value="08:00">08:00</option>
-              <option value="09:00">09:00</option>
-              <option value="10:00">10:00</option>
-              <option value="11:00">11:00</option>
-              <option value="12:00">12:00</option>
-              <option value="13:00">13:00</option>
-              <option value="14:00">14:00</option>
-              <option value="15:00">15:00</option>
-              <option value="16:00">16:00</option>
-              <option value="17:00">17:00</option>
-              <option value="18:00">18:00</option>
-              <option value="19:00">19:00</option>
-              <option value="20:00">20:00</option>
-              <option value="21:00">21:00</option>
-              <option value="22:00">22:00</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="taskColor">Color</label>
-          <input type="color" id="taskColor" name="taskColor" value="#8b5cf6" />
-        </div>
-
-        <input type="hidden" id="taskId" name="taskId" />
-
-        <div class="form-actions">
-          <button type="submit" id="saveTaskBtn">Guardar actividad</button>
-          <button type="button" id="deleteTaskBtn">Eliminar</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <script src="app.js"></script>
-</head>
 </body>
 </html>
